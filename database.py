@@ -84,7 +84,7 @@ for row in c.execute("SELECT name, sum(money), team FROM player_salaries GROUP B
     file_output.write(str(row[0]).ljust(25,' ') + str(row[2]).ljust(25,' ') + str(row[1]) + '\n')
 
 ## Team statistics
-file_output.write('\n\n##### Average salary for team every year and variance\n')
+file_output.write('\n\n##### Average salary for team every year\n')
 file_output.write('===========================================\n')
 file_output.write('===========================================\n\n')
 
@@ -105,7 +105,7 @@ for x in range(0, len(years)):
     file_output.write('THIS YEARS SALARY VARIANCE: ' + str(max_income - minimum_income) + '\n\n')    
     
 ## Team statistics
-file_output.write('\n\n##### Average age, average experience and variance by season\n')
+file_output.write('\n\n##### Average age, average experience by season\n')
 file_output.write('===========================================\n')
 file_output.write('===========================================\n\n')  
 
@@ -121,4 +121,4 @@ for x in range(0, len(years)):
         if row[1] < min_exp and min_exp != 0:
             min_exp = row[1]
         file_output.write(str(row[2]).ljust(25, ' ') + str(row[0]).ljust(15, ' ') + str(row[1]) + '\n')
-    file_output.write('THIS YEARS EXPERIENCE VARIANCE: ' + str(max_exp - min_exp) + '\n\n')  
+    file_output.write('\n')  
